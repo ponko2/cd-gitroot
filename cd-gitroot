@@ -61,7 +61,7 @@ function cdgitroot() {
   fi
 
   local relative_path="$1"
-  local root_path=$(git rev-parse --show-toplevel)
+  local root_path=$(git rev-parse --path-format=relative --show-toplevel)
 
   if [ -n "$relative_path" ]; then
     cd "$root_path/$relative_path"
